@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AdmPractica1.Models.lewensztain>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Friendoflewensztain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.place)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.birthdate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Friendoflewensztain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.place)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.birthdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.lewensztainID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.lewensztainID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.lewensztainID })
+        </td>
+    </tr>
+}
+
+</table>
